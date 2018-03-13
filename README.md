@@ -23,3 +23,4 @@ Webpack will look for the .wasm, .mjs, .js and .json extensions in this order.
 
 * (Intro:How to webpack 4)[https://www.valentinog.com/blog/webpack-4-tutorial/]
 * (What's new in webpack 4)[https://scotch.io/tutorials/whats-new-in-webpack-4#environment-support]
+* (Webpack 4 + React + Testing)(https://github.com/HashemKhalifa/webpack-react-boilerplate)

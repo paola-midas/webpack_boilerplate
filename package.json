@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest --watchAll --coverage"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,10 @@
     "js",
     "bundle",
     "babel",
-    "react"
+    "react",
+    "eslint",
+    "testing",
+    "jest"
   ],
   "author": "paola@netmidas.com",
   "license": "MIT",
@@ -24,18 +28,47 @@
     "url": "https://github.com/paola-midas/webpack_boilerplate/issues"
   },
   "homepage": "https://github.com/paola-midas/webpack_boilerplate#readme",
+  "dependencies": {
+    "proptypes": "^1.1.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
   "devDependencies": {
+    "@babel/preset-react": "^7.0.0-beta.40",
     "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
     "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-react": "^7.7.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.0.6",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "jest": "^22.4.2",
+    "jest-environment-enzyme": "^6.0.0",
+    "jest-enzyme": "^6.0.0",
+    "react-hot-loader": "^4.0.0",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.11",
     "webpack-dev-server": "^3.1.1"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "testEnvironment": "enzyme",
+    "testEnvironmentOptions": {
+      "enzymeAdapter": "react16"
+    },
+    "setupTestFrameworkScriptFile": "<rootDir>/src/index.js",
+    "testRegex": "/(tests|failing_tests)/.*\\.test\\.js$",
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!enzyme-matchers)"
+    ],
+    "verbose": true
   }
 }
